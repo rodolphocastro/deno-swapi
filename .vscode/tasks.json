@@ -18,6 +18,7 @@
         "command": "deno",
         "args": [
           "run",
+          "--unstable",
           "-A",
           ".\\main.ts"
         ],

@@ -20,7 +20,7 @@
           "run",
           "--unstable",
           "-A",
-          ".\\main.ts"
+          ".\\app.ts"
         ],
         "problemMatcher": []
       }

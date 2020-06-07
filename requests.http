@@ -3,3 +3,9 @@ GET http://localhost:8000/films
 
 ### Get a film
 GET http://localhost:8000/films/1
+
+### List all species
+GET http://localhost:8000/species/
+
+### Get a specie
+GET http://localhost:8000/species/1

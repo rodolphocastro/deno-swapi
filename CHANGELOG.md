@@ -6,6 +6,18 @@ This is the version currently published on master.
 
 ### [Under Development] - Added
 
++ Added **Species** endpoints
+  + GET Single
+  + GET List
+
+### [Under Development] - Changed
+
++ `file_utils` now uses a interface to better describe the expected `json` files
+
+### [Under Development] - Fixed
+
+### [Under Development] - Deprecated
+
 ## 🆕 [v0.0.1]
 
 The first and simplest version of the api.

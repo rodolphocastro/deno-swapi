@@ -1,6 +1,7 @@
 // As of v0.55.0 this module requires the --unstable flag to be used
 import * as fs from "https://deno.land/std@v0.55.0/fs/mod.ts";
 import { Film } from "./models/film.ts";
+import { Specie } from "./models/specie.ts";
 import { IState, ModelState } from "./state.ts";
 
 /**
@@ -28,4 +29,17 @@ export async function createFilmStateAsync(
 ): Promise<IState<Film>> {
   const films = await loadDataFromFiles<Film>(dataDir, filmFile);
   return new ModelState<Film>(films);
+}
+
+/**
+ * Creates and seeds a ModelState for Species.
+ * @param dataDir directory holding the json file, defaults to ./data
+ * @param speciesFile json file containing species, defautls to species.json
+ */
+export async function createSpecieStateAsync(
+  dataDir: string = "./data",
+  speciesFile: string = "species.json",
+): Promise<IState<Specie>> {
+  const species = await loadDataFromFiles<Specie>(dataDir, speciesFile);
+  return new ModelState<Specie>(species);
 }

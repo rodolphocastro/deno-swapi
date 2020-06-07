@@ -20,9 +20,11 @@ filmsRouter
     response.body = filmsState.list();
     response.status = Status.OK;
   })
-  .get("/:id", ({response, params}) => {
-    const {id} = params;
-    const result = filmsState.list().filter(f => f.url === parseInt(id as string))[0];
+  .get("/:id", ({ response, params }) => {
+    const { id } = params;
+    const result = filmsState.list().filter((f) =>
+      f.url === parseInt(id as string)
+    )[0];
     if (result) {
       response.status = Status.OK;
       response.body = result;

@@ -2,6 +2,7 @@
 import * as fs from "https://deno.land/std@v0.55.0/fs/mod.ts";
 import { Film } from "./models/film.ts";
 import { Specie } from "./models/specie.ts";
+import { Vehicle } from "./models/vehicle.ts";
 import { IState, ModelState } from "./state.ts";
 
 /**
@@ -49,4 +50,17 @@ export async function createSpecieStateAsync(
 ): Promise<IState<Specie>> {
   const species = await loadDataFromFiles<Specie>(dataDir, speciesFile);
   return new ModelState<Specie>(species);
+}
+
+/**
+ * Creates and seeds a ModelState for Vehicles.
+ * @param dataDir directory holding the json file, defaults to ./data
+ * @param vehiclesFile json file containing species, defautls to vehicles.json
+ */
+export async function createVehicleStateAsync(
+  dataDir: string = "./data",
+  vehiclesFile: string = "vehicles.json",
+): Promise<IState<Vehicle>> {
+  const vehicles = await loadDataFromFiles<Vehicle>(dataDir, vehiclesFile);
+  return new ModelState<Vehicle>(vehicles);
 }

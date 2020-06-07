@@ -15,6 +15,11 @@ Currently we support the following endpoints.
 + All (`GET /films`)
 + Single (`GET /films/{id}`)
 
+### 🧬 Species
+
++ All (`GET /species/`)
++ Single (`GET /species/{id}`)
+
 ## ⏯ Running
 
 To run the api (as of the latest version) run `deno run --unstable --allow-read --allow-net .\app.ts`.
@@ -23,12 +28,12 @@ To run the api (as of the latest version) run `deno run --unstable --allow-read 
 
 + [X] Films endpoints
 + [ ] People endpoints
-+ [ ] Planets
-+ [ ] Species
-+ [ ] Vehicles
-+ [ ] Starships
-+ [ ] Episode VII
-+ [ ] Episode VIII
-+ [ ] Episode IX
++ [ ] Planets endpoints
++ [X] Species endpoints
++ [ ] Vehicles endpoints
++ [ ] Starships endpoints
++ [ ] Episode VII data
++ [ ] Episode VIII data
++ [ ] Episode IX data
 + [ ] Open API schema generation
 + [ ] Improve data types

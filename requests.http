@@ -9,3 +9,9 @@ GET http://localhost:8000/species/
 
 ### Get a specie
 GET http://localhost:8000/species/1
+
+### List all vehicles
+GET http://localhost:8000/vehicles
+
+### Get a vehicle
+GET http://localhost:8000/vehicles/1

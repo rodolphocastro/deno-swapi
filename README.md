@@ -31,3 +31,4 @@ To run the api (as of the latest version) run `deno run --unstable --allow-read 
 + [ ] Episode VIII
 + [ ] Episode IX
 + [ ] Open API schema generation
++ [ ] Improve data types

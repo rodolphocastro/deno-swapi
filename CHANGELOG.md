@@ -6,6 +6,10 @@ This is the version currently published on master.
 
 ### [Under Development] - Added
 
++ Added **Species** endpoints
+  + GET Single
+  + GET List
+
 ## 🆕 [v0.0.1]
 
 The first and simplest version of the api.

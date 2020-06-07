@@ -5,6 +5,13 @@ import { Specie } from "./models/specie.ts";
 import { IState, ModelState } from "./state.ts";
 
 /**
+ * Describes the expected structure for a .json storage.
+ */
+interface JsonStorable<T> {
+  data?: T[];
+}
+
+/**
  * Loads data and deserializes data from a json file.
  * @param dataDir directory containing the file
  * @param filename filename containing the data, serialized
@@ -14,8 +21,8 @@ async function loadDataFromFiles<T>(
   filename: string,
 ): Promise<T[]> {
   await fs.ensureDir(dataDir);
-  const result = await fs.readJson(dataDir + "/" + filename) as { data: T[] };
-  return result.data;
+  const result = await fs.readJson(dataDir + "/" + filename) as JsonStorable<T>;
+  return result.data ?? [];
 }
 
 /**

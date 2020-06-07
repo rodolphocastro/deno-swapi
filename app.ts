@@ -4,11 +4,12 @@ import {
   Router,
   Status,
 } from "https://deno.land/x/oak@v5.0.0/mod.ts";
-import { createFilmStateAsync } from "./file_utils.ts";
+import { createFilmStateAsync, createSpecieStateAsync } from "./file_utils.ts";
 
 info("Loading data from files");
 
 const filmsState = await createFilmStateAsync();
+const speciesState = await createSpecieStateAsync();
 
 info("Creating the Application");
 
@@ -34,7 +35,28 @@ filmsRouter
     response.status = Status.NotFound;
   });
 
+const speciesRouter = new Router({ prefix: "/species" });
+speciesRouter
+  .get("/", ({ response }) => {
+    response.body = speciesState.list();
+    response.status = Status.OK;
+  })
+  .get("/:id", ({ response, params }) => {
+    const { id } = params;
+    const result = speciesState.list().filter((f) =>
+      f.url === parseInt(id as string)
+    )[0];
+    if (result) {
+      response.status = Status.OK;
+      response.body = result;
+      return;
+    }
+
+    response.status = Status.NotFound;
+  });
+
 app.use(filmsRouter.routes());
+app.use(speciesRouter.routes());
 
 info("Listening to port 8000");
 await app.listen({ port: 8000 });

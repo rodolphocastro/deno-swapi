@@ -42,3 +42,4 @@ To run the api (as of the latest version) run `deno run --unstable --allow-read 
 + [ ] Episode IX data
 + [ ] Open API schema generation
 + [ ] Improve data types
++ [ ] Docker Image

@@ -4,7 +4,13 @@
 
 This is the version currently published on master.
 
-### 🔧 [Under Development] - Added
+### [Under Development] - Added
+
+## 🆕 [v0.0.1]
+
+The first and simplest version of the api.
+
+### [v0.0.1] - Added
 
 + Added storage
   + By using `json` files within the `data` folder data can be added to the API
@@ -14,3 +20,4 @@ This is the version currently published on master.
 
 <!-- Links to Tags -->
 [Under Development]:https://github.com/rodolphocastro/deno-swapi/tree/master
+[v0.0.1]:https://github.com/rodolphocastro/deno-swapi/tree/v0.0.1

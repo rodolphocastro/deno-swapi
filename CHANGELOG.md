@@ -15,6 +15,9 @@ This is the version currently published on master.
 + Added **Starships** endpoints
   + GET Single
   + GET List
++ Added **Planets** endpoints
+  + GET Single
+  + GET List
 
 ### [Under Development] - Changed
 

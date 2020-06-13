@@ -21,3 +21,9 @@ GET http://localhost:8000/starships
 
 ### Get a starship
 GET http://localhost:8000/starships/2
+
+### List all planets
+GET http://localhost:8000/planets
+
+### Get a planet
+GET http://localhost:8000/planets/1

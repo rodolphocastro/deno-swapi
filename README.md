@@ -23,12 +23,17 @@ Currently we support the following endpoints.
 ### 🚗 Vehicles
 
 + All (`GET /vehicles/`)
-+ Single (`GET /vehicles/1`)
++ Single (`GET /vehicles/{id}`)
 
 ### 🚀 Starships
 
 + All (`GET /starships/`)
-+ Single (`GET /starships/2`)
++ Single (`GET /starships/{id}`)
+
+### 🌍 Planets
+
++ All (`GET /planets/`)
++ Single (`GET /planets/{id}`)
 
 ## ⏯ Running
 
@@ -38,7 +43,7 @@ To run the api (as of the latest version) run `deno run --unstable --allow-read 
 
 + [X] Films endpoints
 + [ ] People endpoints
-+ [ ] Planets endpoints
++ [X] Planets endpoints
 + [X] Species endpoints
 + [X] Vehicles endpoints
 + [X] Starships endpoints

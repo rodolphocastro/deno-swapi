@@ -4,6 +4,7 @@ import { Film } from "./models/film.ts";
 import { Specie } from "./models/specie.ts";
 import { Vehicle } from "./models/vehicle.ts";
 import { IState, ModelState } from "./state.ts";
+import { Starship } from "./models/starship.ts";
 
 /**
  * Describes the expected structure for a .json storage.
@@ -19,7 +20,7 @@ interface JsonStorable<T> {
  */
 async function loadDataFromFiles<T>(
   dataDir: string,
-  filename: string,
+  filename: string
 ): Promise<T[]> {
   await fs.ensureDir(dataDir);
   const result = await fs.readJson(dataDir + "/" + filename) as JsonStorable<T>;
@@ -33,7 +34,7 @@ async function loadDataFromFiles<T>(
  */
 export async function createFilmStateAsync(
   dataDir: string = "./data",
-  filmFile: string = "films.json",
+  filmFile: string = "films.json"
 ): Promise<IState<Film>> {
   const films = await loadDataFromFiles<Film>(dataDir, filmFile);
   return new ModelState<Film>(films);
@@ -46,7 +47,7 @@ export async function createFilmStateAsync(
  */
 export async function createSpecieStateAsync(
   dataDir: string = "./data",
-  speciesFile: string = "species.json",
+  speciesFile: string = "species.json"
 ): Promise<IState<Specie>> {
   const species = await loadDataFromFiles<Specie>(dataDir, speciesFile);
   return new ModelState<Specie>(species);
@@ -59,8 +60,21 @@ export async function createSpecieStateAsync(
  */
 export async function createVehicleStateAsync(
   dataDir: string = "./data",
-  vehiclesFile: string = "vehicles.json",
+  vehiclesFile: string = "vehicles.json"
 ): Promise<IState<Vehicle>> {
   const vehicles = await loadDataFromFiles<Vehicle>(dataDir, vehiclesFile);
   return new ModelState<Vehicle>(vehicles);
+}
+
+/**
+ * Creates and seeds a ModelState for Starships.
+ * @param dataDir directory holding the json file, defaults to ./data
+ * @param starshipsFile json file containing starships, defaults to startships.json
+ */
+export async function createStarshipStateAsync(
+  dataDir: string = "./data",
+  starshipsFile: string = "starships.json"
+): Promise<IState<Starship>> {
+  const starships = await loadDataFromFiles<Starship>(dataDir, starshipsFile);
+  return new ModelState<Starship>(starships);
 }

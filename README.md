@@ -25,6 +25,11 @@ Currently we support the following endpoints.
 + All (`GET /vehicles/`)
 + Single (`GET /vehicles/1`)
 
+### 🚀 Starships
+
++ All (`GET /starships/`)
++ Single (`GET /starships/2`)
+
 ## ⏯ Running
 
 To run the api (as of the latest version) run `deno run --unstable --allow-read --allow-net .\app.ts`.
@@ -36,7 +41,7 @@ To run the api (as of the latest version) run `deno run --unstable --allow-read 
 + [ ] Planets endpoints
 + [X] Species endpoints
 + [X] Vehicles endpoints
-+ [ ] Starships endpoints
++ [X] Starships endpoints
 + [ ] Episode VII data
 + [ ] Episode VIII data
 + [ ] Episode IX data

@@ -12,6 +12,9 @@ This is the version currently published on master.
 + Added **Vehicles** endpoints
   + GET Single
   + GET List
++ Added **Starships** endpoints
+  + GET Single
+  + GET List
 
 ### [Under Development] - Changed
 

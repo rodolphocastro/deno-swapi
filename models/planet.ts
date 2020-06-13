@@ -7,7 +7,7 @@ export interface Planet {
   gravity: string;
   terrain: string;
   surface_water: string;
-  population: string
+  population: string;
   residents: number[];
   films: number[];
   created: Date;

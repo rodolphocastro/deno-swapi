@@ -9,7 +9,7 @@ import {
   createSpecieStateAsync,
   createVehicleStateAsync,
   createStarshipStateAsync,
-  createPlanetsStateAsync
+  createPlanetsStateAsync,
 } from "./file_utils.ts";
 
 info("Loading data from files");
@@ -84,13 +84,13 @@ vehiclesRouter
     response.status = Status.NotFound;
   });
 
-const starshipRouter = new Router({prefix: "/starships"});
+const starshipRouter = new Router({ prefix: "/starships" });
 starshipRouter
-  .get("/", ({response}) => {
-    response.body= starshipState.list();
+  .get("/", ({ response }) => {
+    response.body = starshipState.list();
     response.status = Status.OK;
   })
-  .get("/:id", ({response, params}) => {
+  .get("/:id", ({ response, params }) => {
     const { id } = params;
     const result = starshipState.list().filter((s) =>
       s.url === parseInt(id as string)
@@ -102,15 +102,15 @@ starshipRouter
     }
 
     response.status = Status.NotFound;
-  })
+  });
 
-const planetsRouter = new Router({prefix: "/planets"});
+const planetsRouter = new Router({ prefix: "/planets" });
 planetsRouter
-  .get("/", ({response}) => {
+  .get("/", ({ response }) => {
     response.body = planetsState.list();
     response.status = Status.OK;
   })
-  .get("/:id", ({response, params}) => {
+  .get("/:id", ({ response, params }) => {
     const { id } = params;
     const result = planetsState.list().filter((p) =>
       p.url === parseInt(id as string)
@@ -120,7 +120,7 @@ planetsRouter
       response.body = result;
       return;
     }
-  })
+  });
 
 app.use(
   ...[
@@ -128,7 +128,8 @@ app.use(
     speciesRouter.routes(),
     vehiclesRouter.routes(),
     starshipRouter.routes(),
-    planetsRouter.routes()]
+    planetsRouter.routes(),
+  ],
 );
 
 info("Listening to port 8000");

@@ -8,7 +8,8 @@ import {
   createFilmStateAsync,
   createSpecieStateAsync,
   createVehicleStateAsync,
-  createStarshipStateAsync
+  createStarshipStateAsync,
+  createPlanetsStateAsync
 } from "./file_utils.ts";
 
 info("Loading data from files");
@@ -17,6 +18,7 @@ const filmsState = await createFilmStateAsync();
 const speciesState = await createSpecieStateAsync();
 const vehiclesState = await createVehicleStateAsync();
 const starshipState = await createStarshipStateAsync();
+const planetsState = await createPlanetsStateAsync();
 
 info("Creating the Application");
 
@@ -102,12 +104,31 @@ starshipRouter
     response.status = Status.NotFound;
   })
 
+const planetsRouter = new Router({prefix: "/planets"});
+planetsRouter
+  .get("/", ({response}) => {
+    response.body = planetsState.list();
+    response.status = Status.OK;
+  })
+  .get("/:id", ({response, params}) => {
+    const { id } = params;
+    const result = planetsState.list().filter((p) =>
+      p.url === parseInt(id as string)
+    )[0];
+    if (result) {
+      response.status = Status.OK;
+      response.body = result;
+      return;
+    }
+  })
+
 app.use(
   ...[
     filmsRouter.routes(),
     speciesRouter.routes(),
     vehiclesRouter.routes(),
-  starshipRouter.routes()]
+    starshipRouter.routes(),
+    planetsRouter.routes()]
 );
 
 info("Listening to port 8000");

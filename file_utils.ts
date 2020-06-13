@@ -5,6 +5,7 @@ import { Specie } from "./models/specie.ts";
 import { Vehicle } from "./models/vehicle.ts";
 import { IState, ModelState } from "./state.ts";
 import { Starship } from "./models/starship.ts";
+import { Planet } from "./models/planet.ts";
 
 /**
  * Describes the expected structure for a .json storage.
@@ -77,4 +78,16 @@ export async function createStarshipStateAsync(
 ): Promise<IState<Starship>> {
   const starships = await loadDataFromFiles<Starship>(dataDir, starshipsFile);
   return new ModelState<Starship>(starships);
+}
+
+/**
+ * Creates and seeds a ModelState for Planets.
+ * @param dataDir directory holding the json file, defaults to ./data
+ * @param planetsFile json file containing planets, defaults to planets.json
+ */
+export async function createPlanetsStateAsync(
+  dataDir:string = "./data",
+  planetsFile: string = "planets.json"): Promise<IState<Planet>> {
+  const planets = await loadDataFromFiles<Planet>(dataDir, planetsFile);
+  return new ModelState<Planet>(planets);
 }

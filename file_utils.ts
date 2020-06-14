@@ -100,8 +100,8 @@ export async function createPlanetsStateAsync(
  * @param peopleFile json file containing people, defaults to people.json
  */
 export async function createPeopleStateAsync(
-  dataDir:string = "./data",
-  peopleFile: string = "people.json"
+  dataDir: string = "./data",
+  peopleFile: string = "people.json",
 ): Promise<IState<Person>> {
   const people = await loadDataFromFiles<Person>(dataDir, peopleFile);
   return new ModelState<Person>(people);

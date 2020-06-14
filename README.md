@@ -52,7 +52,7 @@ To run the api (as of the latest version) run `deno run --unstable --allow-read 
 + [X] Species endpoints
 + [X] Vehicles endpoints
 + [X] Starships endpoints
-+ [ ] Route One data
++ [ ] Rogue One data
 + [ ] Solo data
 + [ ] Episode VII data
 + [ ] Episode VIII data
@@ -60,3 +60,4 @@ To run the api (as of the latest version) run `deno run --unstable --allow-read 
 + [ ] Open API schema generation
 + [ ] Improve data types
 + [ ] Docker Image
++ [ ] SPA to display the data

@@ -35,6 +35,11 @@ Currently we support the following endpoints.
 + All (`GET /planets/`)
 + Single (`GET /planets/{id}`)
 
+### 🤼 People
+
++ All (`GET /people/`)
++ Single (`GET /people/{id}`)
+
 ## ⏯ Running
 
 To run the api (as of the latest version) run `deno run --unstable --allow-read --allow-net .\app.ts`.
@@ -42,11 +47,13 @@ To run the api (as of the latest version) run `deno run --unstable --allow-read 
 ## 📝 Roadmap
 
 + [X] Films endpoints
-+ [ ] People endpoints
++ [X] People endpoints
 + [X] Planets endpoints
 + [X] Species endpoints
 + [X] Vehicles endpoints
 + [X] Starships endpoints
++ [ ] Route One data
++ [ ] Solo data
 + [ ] Episode VII data
 + [ ] Episode VIII data
 + [ ] Episode IX data

@@ -18,6 +18,9 @@ This is the version currently published on master.
 + Added **Planets** endpoints
   + GET Single
   + GET List
++ Added **People** endpoints
+  + GET Single
+  + GET List
 
 ### [Under Development] - Changed
 

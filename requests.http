@@ -27,3 +27,9 @@ GET http://localhost:8000/planets
 
 ### Get a planet
 GET http://localhost:8000/planets/1
+
+### List all people
+GET http://localhost:8000/people
+
+### Get a person
+GET http://localhost:8000/people/1

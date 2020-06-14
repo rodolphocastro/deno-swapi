@@ -10,6 +10,7 @@ import {
   createVehicleStateAsync,
   createStarshipStateAsync,
   createPlanetsStateAsync,
+  createPeopleStateAsync,
 } from "./file_utils.ts";
 
 info("Loading data from files");
@@ -19,6 +20,7 @@ const speciesState = await createSpecieStateAsync();
 const vehiclesState = await createVehicleStateAsync();
 const starshipState = await createStarshipStateAsync();
 const planetsState = await createPlanetsStateAsync();
+const peopleState = await createPeopleStateAsync();
 
 info("Creating the Application");
 
@@ -122,6 +124,24 @@ planetsRouter
     }
   });
 
+const peopleRouter = new Router({ prefix: "/people" });
+peopleRouter
+  .get("/", ({ response }) => {
+    response.body = peopleState.list();
+    response.status = Status.OK;
+  })
+  .get("/:id", ({ response, params }) => {
+    const { id } = params;
+    const result = peopleState.list().filter((p) =>
+      p.url === parseInt(id as string)
+    )[0];
+    if (result) {
+      response.status = Status.OK;
+      response.body = result;
+      return;
+    }
+  });
+
 app.use(
   ...[
     filmsRouter.routes(),
@@ -129,6 +149,7 @@ app.use(
     vehiclesRouter.routes(),
     starshipRouter.routes(),
     planetsRouter.routes(),
+    peopleRouter.routes(),
   ],
 );
 

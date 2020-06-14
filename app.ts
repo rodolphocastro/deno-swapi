@@ -26,7 +26,7 @@ info("Creating the Application");
 
 const app = new Application();
 
-const filmsRouter = new Router({ prefix: "/films" });
+const filmsRouter = new Router({ prefix: "/api/films" });
 filmsRouter
   .get("/", ({ response }) => {
     response.body = filmsState.list();
@@ -46,7 +46,7 @@ filmsRouter
     response.status = Status.NotFound;
   });
 
-const speciesRouter = new Router({ prefix: "/species" });
+const speciesRouter = new Router({ prefix: "/api/species" });
 speciesRouter
   .get("/", ({ response }) => {
     response.body = speciesState.list();
@@ -66,7 +66,7 @@ speciesRouter
     response.status = Status.NotFound;
   });
 
-const vehiclesRouter = new Router({ prefix: "/vehicles" });
+const vehiclesRouter = new Router({ prefix: "/api/vehicles" });
 vehiclesRouter
   .get("/", ({ response }) => {
     response.body = vehiclesState.list();
@@ -86,7 +86,7 @@ vehiclesRouter
     response.status = Status.NotFound;
   });
 
-const starshipRouter = new Router({ prefix: "/starships" });
+const starshipRouter = new Router({ prefix: "/api/starships" });
 starshipRouter
   .get("/", ({ response }) => {
     response.body = starshipState.list();
@@ -106,7 +106,7 @@ starshipRouter
     response.status = Status.NotFound;
   });
 
-const planetsRouter = new Router({ prefix: "/planets" });
+const planetsRouter = new Router({ prefix: "/api/planets" });
 planetsRouter
   .get("/", ({ response }) => {
     response.body = planetsState.list();
@@ -124,7 +124,7 @@ planetsRouter
     }
   });
 
-const peopleRouter = new Router({ prefix: "/people" });
+const peopleRouter = new Router({ prefix: "/api/people" });
 peopleRouter
   .get("/", ({ response }) => {
     response.body = peopleState.list();

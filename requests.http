@@ -1,35 +1,35 @@
 ### List all films
-GET http://localhost:8000/films
+GET http://localhost:8000/api/films
 
 ### Get a film
-GET http://localhost:8000/films/1
+GET http://localhost:8000/api/films/1
 
 ### List all species
-GET http://localhost:8000/species/
+GET http://localhost:8000/api/species/
 
 ### Get a specie
-GET http://localhost:8000/species/1
+GET http://localhost:8000/api/species/1
 
 ### List all vehicles
-GET http://localhost:8000/vehicles
+GET http://localhost:8000/api/vehicles
 
 ### Get a vehicle
-GET http://localhost:8000/vehicles/1
+GET http://localhost:8000/api/vehicles/1
 
 ### List all starships
-GET http://localhost:8000/starships
+GET http://localhost:8000/api/starships
 
 ### Get a starship
-GET http://localhost:8000/starships/2
+GET http://localhost:8000/api/starships/2
 
 ### List all planets
-GET http://localhost:8000/planets
+GET http://localhost:8000/api/planets
 
 ### Get a planet
-GET http://localhost:8000/planets/1
+GET http://localhost:8000/api/planets/1
 
 ### List all people
-GET http://localhost:8000/people
+GET http://localhost:8000/api/people
 
 ### Get a person
-GET http://localhost:8000/people/1
+GET http://localhost:8000/api/people/1

@@ -6,6 +6,18 @@ This is the version currently published on master.
 
 ### [Under Development] - Added
 
+### [Under Development] - Changed
+
+### [Under Development] - Fixed
+
+### [Under Development] - Deprecated
+
+## 🆕 [v0.1.0]
+
+Stable version containing the original https://swapi.dev data.
+
+### [v0.1.0] - Added
+
 + Added **Species** endpoints
   + GET Single
   + GET List
@@ -22,15 +34,11 @@ This is the version currently published on master.
   + GET Single
   + GET List
 
-### [Under Development] - Changed
+### [v0.1.0] - Changed
 
 + `file_utils` now uses a interface to better describe the expected `json` files
 
-### [Under Development] - Fixed
-
-### [Under Development] - Deprecated
-
-## 🆕 [v0.0.1]
+## [v0.0.1]
 
 The first and simplest version of the api.
 
@@ -44,4 +52,5 @@ The first and simplest version of the api.
 
 <!-- Links to Tags -->
 [Under Development]:https://github.com/rodolphocastro/deno-swapi/tree/master
+[v0.1.0]:https://github.com/rodolphocastro/deno-swapi/tree/v0.1.0
 [v0.0.1]:https://github.com/rodolphocastro/deno-swapi/tree/v0.0.1

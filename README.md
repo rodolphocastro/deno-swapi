@@ -12,33 +12,33 @@ Currently we support the following endpoints.
 
 ### 🎥 Films / Movies
 
-+ All (`GET /films`)
-+ Single (`GET /films/{id}`)
++ All (`GET api/films`)
++ Single (`GET api/films/{id}`)
 
 ### 🧬 Species
 
-+ All (`GET /species/`)
-+ Single (`GET /species/{id}`)
++ All (`GET api/species/`)
++ Single (`GET api/species/{id}`)
 
 ### 🚗 Vehicles
 
-+ All (`GET /vehicles/`)
-+ Single (`GET /vehicles/{id}`)
++ All (`GET api/vehicles/`)
++ Single (`GET api/vehicles/{id}`)
 
 ### 🚀 Starships
 
-+ All (`GET /starships/`)
-+ Single (`GET /starships/{id}`)
++ All (`GET api/starships/`)
++ Single (`GET api/starships/{id}`)
 
 ### 🌍 Planets
 
-+ All (`GET /planets/`)
-+ Single (`GET /planets/{id}`)
++ All (`GET api/planets/`)
++ Single (`GET api/planets/{id}`)
 
 ### 🤼 People
 
-+ All (`GET /people/`)
-+ Single (`GET /people/{id}`)
++ All (`GET api/people/`)
++ Single (`GET api/people/{id}`)
 
 ## ⏯ Running
 
@@ -52,7 +52,7 @@ To run the api (as of the latest version) run `deno run --unstable --allow-read 
 + [X] Species endpoints
 + [X] Vehicles endpoints
 + [X] Starships endpoints
-+ [ ] Route One data
++ [ ] Rogue One data
 + [ ] Solo data
 + [ ] Episode VII data
 + [ ] Episode VIII data
@@ -60,3 +60,4 @@ To run the api (as of the latest version) run `deno run --unstable --allow-read 
 + [ ] Open API schema generation
 + [ ] Improve data types
 + [ ] Docker Image
++ [ ] SPA to display the data

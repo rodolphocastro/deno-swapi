@@ -1,15 +1,20 @@
 <script>
   const filmsEndpoint = "/api/films";
   const filmsPromise = fetchFilms();
+  let showFilms = true;
 
   async function fetchFilms() {
     const response = await fetch(filmsEndpoint);
-    return response.json()
+    return response.json();
+  }
+
+  function toggleFilms() {
+    showFilms = !showFilms;
   }
 </script>
 
 <section container>
-  <h3>Films</h3>
+  <h3>🎥 Films</h3>
   <p>
     The films endpoint is served on the route
     <code>{filmsEndpoint}</code>
@@ -18,12 +23,18 @@
     <p>Please wait, loading data...</p>
   {:then films}
     <p>There are {films.length} films on the API</p>
-    <ul>
-      {#each films as film}
-        <li>{film.url}: {film.title}</li>
-      {/each}
-    </ul>
-  {:catch _ }
+    <hr />
+    <button on:click={toggleFilms}>
+      {showFilms ? 'Hide Films' : 'Show Films'}
+    </button>
+    {#if showFilms}
+      <ul>
+        {#each films as film}
+          <li>{film.url}: {film.title}</li>
+        {/each}
+      </ul>
+    {/if}
+  {:catch _}
     <p>Ops, something went wrong while fetching the movies</p>
   {/await}
 </section>

@@ -12,4 +12,5 @@
   <BrowseGeneric endpointName="Films" endpoint="/api/films" endpointEmoji="🎥" displayProperties="{['url', 'title']}"/>
   <BrowseGeneric endpointName="Species" endpoint="/api/species" endpointEmoji="🧬"/>
   <BrowseGeneric endpointName="People" endpoint="/api/people" endpointEmoji="🙋‍♂️🙋‍♀️"/>
+  <BrowseGeneric endpointName="Planets" endpoint="/api/planets" endpointEmoji="🌎"/>
 </main>

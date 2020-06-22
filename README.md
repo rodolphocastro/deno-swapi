@@ -42,7 +42,31 @@ Currently we support the following endpoints.
 
 ## ⏯ Running
 
+### Requirements
+
+You'll need two things to run this project:
+
++ Deno (v1.0.0 or greater)
++ NodeJS (v13.7.0 or greated)
+
+### Backend
+
 To run the api (as of the latest version) run `deno run --unstable --allow-read --allow-net .\app.ts`.
+
+This will:
+
+1. Spin up a rest API listening to port `:8000`
+2. Serve files from the `portal/public` folder on the `/` route
+
+### Frontend
+
+_From within the `portal` folder_
+
+To build the frontend run `npm run build`. This will serve the required files to the `public` folder.
+
+To run a developer version, with Hot Reload, run `npm run dev`. This will constantly serve files (as you modify components) on the `public` folder.
+
+> Personal note: I'm usually using two terminals to run and debug this application. On one terminal I launch deno (the API itself) and on the other one I launch Svelte's Dev Server. Then I launch Firefox Developer edition and navigate to http://localhost:8000 and test it out.
 
 ## 📝 Roadmap
 

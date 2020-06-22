@@ -1,7 +1,6 @@
 <script>
   import NavBar from "./Navbar.svelte";
-  import BrowseFilms from "./browse/Films.svelte";
-  import BrowseSpecies from "./browse/Species.svelte";
+  import BrowseGeneric from "./browse/Generic.svelte";
 </script>
 
 <NavBar />
@@ -10,6 +9,7 @@
     <h1>Welcome to SWAPI</h1>
     <h2>Proudly powered by 🦕 Deno, 🤖 SvelteJS and 📎 AttriCSS.</h2>
   </section>
-  <BrowseFilms />
-  <BrowseSpecies />
+  <BrowseGeneric endpointName="Films" endpoint="/api/films" endpointEmoji="🎥" displayProperties="{['url', 'title']}"/>
+  <BrowseGeneric endpointName="Species" endpoint="/api/species" endpointEmoji="🧬"/>
+  <BrowseGeneric endpointName="People" endpoint="/api/people" endpointEmoji="🙋‍♂️🙋‍♀️"/>
 </main>

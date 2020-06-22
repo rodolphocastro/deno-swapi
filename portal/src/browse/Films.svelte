@@ -29,7 +29,9 @@
   {:then films}
     <p>There are {films.length} films on the API</p>
     <hr />
-    <button on:click="{toggleJson}">{showJson ? 'Hide Json' : 'Show Json'}</button>
+    <button on:click={toggleJson}>
+      {showJson ? 'Hide Json' : 'Show Json'}
+    </button>
     <button on:click={toggleFilms}>
       {showFilms ? 'Hide Films' : 'Show Films'}
     </button>

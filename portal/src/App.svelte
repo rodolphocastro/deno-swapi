@@ -39,3 +39,8 @@
     endpoint="/api/vehicles"
     endpointEmoji="🚗" />
 </main>
+<footer>
+  <p>
+    Developed by <a href="https://github.com/rodolphocastro">@rodolphocastro</a>, inspired by <a href="https://swapi.dev/">@juriy's version</a>
+  </p>
+</footer>

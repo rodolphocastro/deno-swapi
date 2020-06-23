@@ -3,7 +3,7 @@
 
 <nav>
   <header>
-    <a href="#">SWAPI</a>
+    <a href="#/">SWAPI</a>
     <label for="nav">(Toggle)</label>
   </header>
   <input type="checkbox" id="nav" hidden checked>

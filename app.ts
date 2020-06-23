@@ -3,6 +3,8 @@ import {
   Application,
   Router,
   Status,
+  send,
+  Middleware,
 } from "https://deno.land/x/oak@v5.0.0/mod.ts";
 import {
   createFilmStateAsync,
@@ -25,6 +27,13 @@ const peopleState = await createPeopleStateAsync();
 info("Creating the Application");
 
 const app = new Application();
+
+const servePortal: Middleware = async ctx => {
+  await send(ctx, ctx.request.url.pathname, {
+    root: Deno.cwd()+'/portal/public',
+    index: 'index.html'
+  })
+};
 
 const filmsRouter = new Router({ prefix: "/api/films" });
 filmsRouter
@@ -151,6 +160,7 @@ app.use(
     planetsRouter.routes(),
     peopleRouter.routes(),
   ],
+  servePortal
 );
 
 info("Listening to port 8000");

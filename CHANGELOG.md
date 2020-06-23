@@ -6,6 +6,9 @@ This is the version currently published on master.
 
 ### [Under Development] - Added
 
++ Added a **Portal** to the server
+  + The portal is served on the `/` route
+
 ### [Under Development] - Changed
 
 ### [Under Development] - Fixed

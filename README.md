@@ -40,6 +40,12 @@ Currently we support the following endpoints.
 + All (`GET api/people/`)
 + Single (`GET api/people/{id}`)
 
+## 🌌 Portal
+
+Currently we have a portal that presents some information about the API.
+
+This portal is powered by [Svelte](https://github.com/sveltejs/svelte) and its code can be found on the `/portal` subdirectory!
+
 ## ⏯ Running
 
 ### Requirements
@@ -76,6 +82,7 @@ To run a developer version, with Hot Reload, run `npm run dev`. This will consta
 + [X] Species endpoints
 + [X] Vehicles endpoints
 + [X] Starships endpoints
++ [ ] Proper CORS configuration
 + [ ] Rogue One data
 + [ ] Solo data
 + [ ] Episode VII data
@@ -84,4 +91,4 @@ To run a developer version, with Hot Reload, run `npm run dev`. This will consta
 + [ ] Open API schema generation
 + [ ] Improve data types
 + [ ] Docker Image
-+ [ ] SPA to display the data
++ [X] SPA to display the data

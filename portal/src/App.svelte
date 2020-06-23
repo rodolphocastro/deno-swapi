@@ -13,4 +13,5 @@
   <BrowseGeneric endpointName="Species" endpoint="/api/species" endpointEmoji="🧬"/>
   <BrowseGeneric endpointName="People" endpoint="/api/people" endpointEmoji="🙋‍♂️🙋‍♀️"/>
   <BrowseGeneric endpointName="Planets" endpoint="/api/planets" endpointEmoji="🌎"/>
+  <BrowseGeneric endpointName="Starships" endpoint="/api/starships" endpointEmoji="🚀"/>
 </main>

@@ -24,7 +24,7 @@
 </script>
 
 <section container>
-  <h3>{endpointEmoji} {endpointName}</h3>
+  <h3 id="{endpointName}">{endpointEmoji} {endpointName}</h3>
   <p>
     The {endpointName} endpoint is served on the route
     <code>{endpoint}</code>

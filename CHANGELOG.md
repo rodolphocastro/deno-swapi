@@ -11,6 +11,8 @@ This is the version currently published on master.
 
 ### [Under Development] - Changed
 
++ Cors enabled for all Origins
+
 ### [Under Development] - Fixed
 
 ### [Under Development] - Deprecated

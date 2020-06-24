@@ -82,7 +82,7 @@ To run a developer version, with Hot Reload, run `npm run dev`. This will consta
 + [X] Species endpoints
 + [X] Vehicles endpoints
 + [X] Starships endpoints
-+ [ ] Proper CORS configuration
++ [X] Proper CORS configuration
 + [ ] Rogue One data
 + [ ] Solo data
 + [ ] Episode VII data

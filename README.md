@@ -90,5 +90,5 @@ To run a developer version, with Hot Reload, run `npm run dev`. This will consta
 + [ ] Episode IX data
 + [ ] Open API schema generation
 + [ ] Improve data types
-+ [ ] Docker Image
++ [X] Docker Image
 + [X] SPA to display the data

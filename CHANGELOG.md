@@ -8,6 +8,7 @@ This is the version currently published on master.
 
 + Added a **Portal** to the server
   + The portal is served on the `/` route
++ Added **Docker** support!
 
 ### [Under Development] - Changed
 

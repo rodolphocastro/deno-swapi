@@ -28,6 +28,11 @@ info("Creating the Application");
 
 const app = new Application();
 
+const cors: Middleware = (ctx, next) => {
+  ctx.response.headers.set('Access-Control-Allow-Origin', '*');
+  return next();
+}
+
 const servePortal: Middleware = async ctx => {
   await send(ctx, ctx.request.url.pathname, {
     root: Deno.cwd()+'/portal/public',
@@ -152,6 +157,7 @@ peopleRouter
   });
 
 app.use(
+  cors,
   ...[
     filmsRouter.routes(),
     speciesRouter.routes(),

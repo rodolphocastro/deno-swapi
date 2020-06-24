@@ -48,6 +48,16 @@ This portal is powered by [Svelte](https://github.com/sveltejs/svelte) and its c
 
 ## ⏯ Running
 
+### ☁ Using in the Cloud
+
+Currently we're hosted over at **Microsoft Azure**, via a [App Service Plan](https://swapi-deno.azurewebsites.net/) that pulls from our DockerHub.
+
+### 🐋 Using Docker
+
+If you have what it takes to run **Docker** on your machine simply pull the image from [rodolphoalves/swapi-deno:latest](https://hub.docker.com/repository/docker/rodolphoalves/swapi-deno), map a port to the image's `8000` por and ta-da!
+
+The following snippet might be of help: `docker run -p 8000:8000 rodolphoalves/swapi-deno:latest`
+
 ### Requirements
 
 You'll need two things to run this project:

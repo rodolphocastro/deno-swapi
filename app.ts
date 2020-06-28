@@ -1,4 +1,4 @@
-import { info } from "https://deno.land/std@v0.55.0/log/mod.ts";
+import { info, warning } from "https://deno.land/std@v0.55.0/log/mod.ts";
 import {
   Application,
   Router,
@@ -14,6 +14,11 @@ import {
   createPlanetsStateAsync,
   createPeopleStateAsync,
 } from "./file_utils.ts";
+import {
+  isNpmInstalled,
+  restoreNpmPackages,
+  runNpmScript,
+} from "https://deno.land/x/helix/mod.ts";
 
 info("Loading data from files");
 
@@ -28,16 +33,30 @@ info("Creating the Application");
 
 const app = new Application();
 
+info("Setting up CORS");
 const cors: Middleware = (ctx, next) => {
-  ctx.response.headers.set('Access-Control-Allow-Origin', '*');
+  ctx.response.headers.set("Access-Control-Allow-Origin", "*");
   return next();
+};
+
+info("Setting up the Portal");
+if (await isNpmInstalled()) {
+  info("Restoring portal dependencies");
+  await restoreNpmPackages("./portal/");
+  info("Building the Portal");
+  await runNpmScript("build", "./portal/");
+  info("Portal built successfully");
+} else {
+  warning(
+    "Error trying to Setup the Portal, a static version may be served instead",
+  );
 }
 
-const servePortal: Middleware = async ctx => {
+const servePortal: Middleware = async (ctx) => {
   await send(ctx, ctx.request.url.pathname, {
-    root: Deno.cwd()+'/portal/public',
-    index: 'index.html'
-  })
+    root: Deno.cwd() + "/portal/public",
+    index: "index.html",
+  });
 };
 
 const filmsRouter = new Router({ prefix: "/api/films" });
@@ -166,7 +185,7 @@ app.use(
     planetsRouter.routes(),
     peopleRouter.routes(),
   ],
-  servePortal
+  servePortal,
 );
 
 info("Listening to port 8000");

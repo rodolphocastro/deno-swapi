@@ -12,7 +12,13 @@ This is the version currently published on master.
 
 ### [Under Development] - Deprecated
 
-## 🆕 [v0.2.0]
+## 🆕 [v0.2.1]
+
+### [v0.2.1] - Changed
+
++ The `API` now runs `npm` to ensure the SPA is in the latest version
+
+## [v0.2.0]
 
 ### [v0.2.0] - Added
 
@@ -64,6 +70,7 @@ The first and simplest version of the api.
 
 <!-- Links to Tags -->
 [Under Development]:https://github.com/rodolphocastro/deno-swapi/tree/master
+[v0.2.1]:https://github.com/rodolphocastro/deno-swapi/tree/v0.2.1
 [v0.2.0]:https://github.com/rodolphocastro/deno-swapi/tree/v0.2.0
 [v0.1.0]:https://github.com/rodolphocastro/deno-swapi/tree/v0.1.0
 [v0.0.1]:https://github.com/rodolphocastro/deno-swapi/tree/v0.0.1

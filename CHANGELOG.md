@@ -8,6 +8,8 @@ This is the version currently published on master.
 
 ### [Under Development] - Changed
 
++ The `API` now runs `npm` to ensure the SPA is in the latest version
+
 ### [Under Development] - Fixed
 
 ### [Under Development] - Deprecated

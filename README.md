@@ -67,7 +67,7 @@ You'll need two things to run this project:
 
 ### Backend
 
-To run the api (as of the latest version) run `deno run --unstable --allow-read --allow-net .\app.ts`.
+To run the api (as of the latest version) run `deno run --unstable --allow-read --allow-net --allow-run .\app.ts`.
 
 This will:
 

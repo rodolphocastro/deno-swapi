@@ -1,24 +1,18 @@
 FROM hayd/alpine-deno:1.1.1 as base-deno
-EXPOSE 8000
-WORKDIR /app
-COPY ["data/", "./data/"]
-
-FROM node:lts-alpine3.9 as build-portal
-WORKDIR /portal
-COPY ["portal/package*.json", "./"]
-RUN npm install
-COPY ["portal/", "./"]
-RUN npm run build
-
-FROM hayd/alpine-deno:1.1.1 as build-deno
 WORKDIR /src
-COPY ["models/", "./models"]
 COPY ["*.ts", "./"]
+COPY ["./models/*.ts", "./models/"]
+RUN ["deno", "cache", "--unstable", "./app.ts"]
 RUN ["deno", "bundle", "--unstable", "./app.ts", "swapi.bundle.js"]
 
-FROM base-deno as final
-USER deno
-COPY --from=build-deno "src/swapi.bundle.js" "./"
-COPY --from=build-portal "portal/public/" "./portal/public/"
+FROM base-deno as base-npm
+USER root
+RUN apk add --update npm
 
-CMD [ "run", "--allow-net", "--allow-read", "--unstable", "./swapi.bundle.js" ]
+FROM base-npm as final
+EXPOSE 8000
+WORKDIR /app
+COPY --from=base-npm ["/src/swapi.bundle.js", "."]
+COPY ["./data/", "./data/"]
+COPY ["./portal/", "./portal/"]
+CMD [ "run", "--allow-net", "--allow-read", "--allow-run", "--unstable", "./swapi.bundle.js" ]

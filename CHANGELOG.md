@@ -6,17 +6,23 @@ This is the version currently published on master.
 
 ### [Under Development] - Added
 
-+ SEO tags to the portal
-
 ### [Under Development] - Changed
+
+### [Under Development] - Fixed
+
+### [Under Development] - Deprecated
+
+## 🆕 [v0.2.2]
+
+### [Under Development] - Added
+
++ SEO tags to the portal
 
 ### [Under Development] - Fixed
 
 + Portal title is now "Star Wars API", as intended.
 
-### [Under Development] - Deprecated
-
-## 🆕 [v0.2.1]
+## [v0.2.1]
 
 ### [v0.2.1] - Changed
 
